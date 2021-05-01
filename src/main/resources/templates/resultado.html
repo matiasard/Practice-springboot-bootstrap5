@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Resultado</title>
+	
+	<!-- Bootstrap 5 -->
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0-beta3/css/bootstrap.min.css}">
+		
+</head>
+
+<nav aria-label="breadcrumb">
+	<div class="container text-light">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Producto</li>
+			<li class="breadcrumb-item">Guardado</li>
+		</ol>
+	</div>
+</nav>
+
+<body class="bg-dark text-light">
+
+	<div class="container">
+
+		<h1>Resultado Formulario</h1>
+		<p>El producto fue guardado con éxito ✔️</p>
+		<a href="/producto/ultimo"><button type="button" class="btn btn-outline-primary">Ver el Resultado</button></a>
+
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <!--<link rel="stylesheet" href="../static/style.css">-->
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0-beta3/css/bootstrap.min.css}">
+
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Heredando el fragmento que definimos anteriormente en la carpeta "layout" -->
+    <header th:replace="/layouts/header :: header"></header>
+
+    <div class="container">
+
+        <!-- <div class="jumbotron">
+            <figure class="figure-img" style="background: url('https://themesdesign.in/neloz/images/hero-1-img.png'); background-size: 100%;">
+            </figure>
+            <h1 class="display-3">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            
+        </div> -->
+
+        <h1 class="mt-5 pt-2">Productos 🛒</h1>
+        <!-- <img class="width: 10%" src="Forms.png" alt="imagen-form">  -->
+        <form th:action="@{/producto/guardar}" th:object="${formProducto}" method="post">
+            <div class="row row-md-cols-2 ">
+                <div class="col col-md-7">
+                    <div class="pt-3">
+                        <div class="input-group input-group-lg">
+                            <label class="input-group-text" for="codigo">Codigo</label>
+                            <input class="form-control" type="number" id="codigo" th:field="*{codigo}"
+                                placeholder="Ingrese Codigo">
+                        </div>
+                    </div>
+                    <!-- <br> -->
+                    <div class="pt-3">
+                        <div class="input-group input-group-lg">
+                            <label class="input-group-text" for="nombre">Nombre</label>
+                            <input class="form-control" type="text" id="nombre" th:field="*{nombre}"
+                                placeholder="Ingrese Nombre">
+                        </div>
+                    </div>
+                    <!-- <br> -->
+                    <div class="pt-3">
+                        <div class="input-group input-group-lg">
+                            <label class="input-group-text" for="precio">Precio:</label>
+                            <input class="form-control" type="number" id="precio" th:field="*{precio}">
+                        </div>
+                    </div>
+                    <!-- <br> -->
+                    <div class="pt-3">
+                        <div class="input-group input-group-lg">
+                            <label class="input-group-text" for="marca">Marca:</label>
+                            <input class="form-control" aria-describedby="inputGroup-sizing-lg" type="text" id="marca"
+                                th:field="*{marca}" placeholder="Ingrese Marca" aria-label="Sizing example input">
+                        </div>
+                    </div>
+
+                    <!-- <br> -->
+                    <div class="pt-3">
+                        <div class="input-group input-group-lg">
+                            <label class="input-group-text" for="stock">Stock:</label>
+                            <input class="form-control" aria-describedby="inputGroup-sizing-lg" input type="number"
+                                id="stock" th:field="*{stock}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-auto input-group-lg">
+                        <input type="submit" value="Guardar" class="btn btn-primary">
+                    </div>
+                </div>
+                <div class="col col-md-5 d-none d-md-block">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded"
+                            src="https://themesdesign.in/yearia/images/features/img-5.svg" alt="img-test">
+                    </figure>
+                </div>
+            </div>
+        </form>
+
+
+
+        <aside th:replace="/layouts/publicidad :: aside"></aside>
+
+        <script th:src="@{webjars/bootstrap/5.0.0-beta3/js/bootstrap.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/2.5.4/umd/popper.min.js}"></script>
+</body>
+<footer th:replace="/layouts/footer :: footer"></footer>
+
+</html>

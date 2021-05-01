@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Producto</title>
+	
+	<!-- Bootstrap 5 -->
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0-beta3/css/bootstrap.min.css}">
+</head>
+
+<nav aria-label="breadcrumb">
+	<div class="container text-light">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Producto</li>
+			<li class="breadcrumb-item">Guardado</li>
+			<li class="breadcrumb-item">Resultado</li>
+		</ol>
+	</div>
+</nav>
+
+<body class="bg-dark text-light">
+
+	<div class="container">
+
+		<div class="card text-white bg-success mb-3" style="max-width: 48rem;">
+			<div class="card-header">
+				<h1>Ultimo Producto 🛍️</h1>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">Datos Guardado:</h5>
+				<p>Codigo: <span th:text="${formProducto.codigo}"></span></p>
+				<p>Nombre: <span th:text="${formProducto.nombre}"></span></p>
+				<p>Precio: <span th:text="${formProducto.precio}"></span></p>
+				<p>Marca <span th:text="${formProducto.marca}"></span></p>
+				<p>Stock <span th:text="${formProducto.stock}"></span></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
