@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cliente</title>
+	<link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="container__titulo">
+			<h1>Cliente Datos</h1>
+		</div>
+		<div class="container__form">
+			<form th:action="@{/cliente/guardar}" th:object="${formCliente}" method="post">
+
+				<label for="tipoDocumento">Tipo Documento</label>
+				<select id="tipoDocumento" th:field="*{tipoDocumento}">
+					<option value="" selected hidden>Seleccionar Tipo</option>
+					<option value="DNI">DNI</option>
+					<option value="Pasaporte">Pasaporte</option>
+				</select>
+				<br> <br>
+
+				<label for="numeroDocumento">Numero DNI</label>
+				<input type="number" id="numeroDocumento" th:field="*{numeroDocumento}">
+				<br> <br>
+
+				<label for="nombreApellido">Nombre y Apellido</label>
+				<input type="text" id="nombreApellido" th:field="*{nombreApellido}"
+					placeholder="Ingrese su Nombre y Apellido">
+				<br> <br>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" th:field="*{email}" placeholder="Ingrese su Email">
+				<br> <br>
+
+				<label for="password">Password</label>
+				<input type="password" id="password" th:field="*{password}" placeholder="Contraseña">
+				<br> <br>
+
+				<label for="fechaNacimiento">Fecha de Nacimiento</label>
+				<input type="date" id="fechaNacimiento" th:field="*{fechaNacimiento}"></input>
+				<br><br>
+
+				<label for="codigoAreaTelefono">Codigo de Area del Telefono</label>
+				<input type="number" id="codigoAreaTelefono" th:field="*{codigoAreaTelefono}"></input>
+				<br><br>
+
+				<label for="numeroTelefono">Numero de Telefono</label>
+				<input type="number" id="numeroTelefono" th:field="*{numeroTelefono}"></input>
+				<br><br>
+
+				<label for="fechaUltimaCompra">Fecha Ultima Compra</label>
+				<input type="date" id="fechaUltimaCompra" th:field="*{fechaUltimaCompra}"></input>
+				<br><br>
+		</div>
+		<input class="container__button" type="submit" value="Guardar">
+		</form>
+	</div>
+
+
+</body>
+
+</html>

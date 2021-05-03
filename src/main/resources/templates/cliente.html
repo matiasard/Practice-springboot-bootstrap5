@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cliente List</title>
+</head>
+
+<body>
+	
+	<h1>Cliente Datos</h1>
+
+	<table border="3">
+
+		<thead>
+			<tr>
+				<th>Tipo Documento</th>
+				<th>Num Documento</th>
+				<th>Nombre y Apellido</th>
+				<th>Email</th>
+				<th>Fecha de Nacimiento</th>
+				<th>Fecha Ultima Compra</th>
+				<th>Edad</th>
+				<th>Telefono</th>
+				<th>Datos Adicionales</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<!-- th:each es para iterar la LISTA  y "cli" es un alias para ${formCliente} -->
+			<tr th:each="cli : ${formCliente}">
+				<td th:text="${cli.tipoDocumento}"></td>
+				<td th:text="${cli.numeroDocumento}"></td>
+				<td th:text="${cli.nombreApellido}"></td>
+				<td th:text="${cli.email}"></td>
+				<td th:text="${#temporals.format(cli.fechaNacimiento, 'dd-MM-yyyy')}"></td>
+		<td th:text="${#temporals.format(cli.fechaUltimaCompra, 'dd-MM-yyyy')}"></td>
+		<td th:text="${cli.getEdad}"></td>
+		<td th:text="${cli.codigoAreaTelefono} + '-' + ${cli.numeroTelefono}"></td>
+		<td th:text="${cli.getTiempoUltimaCompra}"></td>
+		
+	</tr>
+	
+	</tbody>
+	
+	</table>
+</body>
+</html>
